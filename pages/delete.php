@@ -11,15 +11,15 @@ if (isset($_GET['file'])) {
 
     if (file_exists($signedPath)) {
 
-        // Extract original file name
+        // extract original file name
         $originalName = str_replace('signed_', '', $file);
 
         $uploadPath = $uploadDir . $originalName;
 
-        // Delete signed file
+        // delete signed file
         unlink($signedPath);
 
-        // Delete original file (if exists)
+        // delete original file (if exists)
         if (file_exists($uploadPath)) {
             unlink($uploadPath);
         }
